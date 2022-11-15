@@ -1,0 +1,13 @@
+#!/bin/bash
+t=""
+i=0
+while [ $i -ne 654321 ]
+do
+        sed -i "6s/.*/$t/g;" solution.txt
+        echo "$t"
+        ./bomb solution.txt
+        sleep 0.1
+        t=$(sed 's/./& /g' <<< $i)
+        ((i=i+1))
+        clear
+done

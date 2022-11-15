@@ -1,0 +1,11 @@
+#!/bin/bash
+i=0
+while [ $i -ne 1001 ]
+do
+       sed -i "7s/.*/$i/g;" solution.txt
+       echo "$i"
+       ./bomb solution.txt
+       sleep 1
+       clear
+       ((i=i+1))
+done
