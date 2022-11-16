@@ -3,11 +3,11 @@ t=""
 i=123300
 while [ $i -ne 654321 ]
 do
-        sed -i "6s/.*/$t/g;" solution.txt
+        sed -i "6s/.*/$t/g;" solution.txt #say goodbye to your SSD
         echo "$t"
-        ./bomb solution.txt
-        sleep 0.01
-        t=$(sed 's/./& /g' <<< $i)
+        ./bomb solution.txt #testing program
+        sleep 0.01 #feel free to change timing based on your computer speed
+        t=$(sed 's/./& /g' <<< $i) #separates string of numbers into numbers with spaces
         ((i=i+1))
         clear
 done
