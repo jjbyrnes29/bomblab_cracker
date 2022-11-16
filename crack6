@@ -6,7 +6,7 @@ do
         sed -i "6s/.*/$t/g;" solution.txt
         echo "$t"
         ./bomb solution.txt
-        sleep 0.1
+        sleep 0.01
         t=$(sed 's/./& /g' <<< $i)
         ((i=i+1))
         clear
