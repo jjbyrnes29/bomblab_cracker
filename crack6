@@ -1,6 +1,6 @@
 #!/bin/bash
 t=""
-i=0
+i=123300
 while [ $i -ne 654321 ]
 do
         sed -i "6s/.*/$t/g;" solution.txt
