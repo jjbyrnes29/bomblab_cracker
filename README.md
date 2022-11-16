@@ -15,5 +15,6 @@ USAGE INSTRUCTIONS:
     Run ./crack and watch for results, remember to send CTRL + C when you see the text change
     
 TROUBLESHOOTING:
+
     If you do not see numbers before the bomblab text being printed, send any input and press enter 
 
