@@ -1,6 +1,6 @@
 #!/bin/bash
 t=""
-i=123300
+i=123300 #high value to skip to the juicy cracking parts
 while [ $i -ne 654321 ]
 do
         sed -i "6s/.*/$t/g;" solution.txt #say goodbye to your SSD
