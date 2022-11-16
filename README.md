@@ -10,9 +10,7 @@ Bash Scripts for cracking Bomb Lab Phase 6 and 7 (Secret Phase)
 
 USAGE INSTRUCTIONS:
 
-    This was quickly whipped up last minute.
+    Open Solution.txt on the line you're about to crack, type in something, save file
     
-    So you'll have to watch it to accept the correct answer and send a keyboard interupt.
-    
-    Make sure to test the values around the one you stopped at.
+    run ./crack and watch for results, remember to send CTRL + C when you see the text change
 
