@@ -1,13 +1,32 @@
 #!/bin/bash
 t=""
-i=123300 #high value to skip to the juicy cracking parts
+i=526410
+tester=""
+input=""
+b=""
+s=""
+echo "Enter bomb file"
+read b
+echo "Enter answer file"
+read s
 while [ $i -ne 654321 ]
 do
-        sed -i "6s/.*/$t/g;" solution.txt #say goodbye to your SSD
-        echo "$t"
-        ./bomb solution.txt #testing the value in defusing the bomb
-        sleep 0.01 #feel free to change timing based on your computer speed
-        t=$(sed 's/./& /g' <<< $i) #separates string of numbers into numbers with spaces
+       # sed -i "6s/.*/$t/g;" solution.txt
+        echo "Solution Attempted: $t"
+        tester=$(echo $t | ./$b $s | grep "Curses")
+	if [[ $tester == *"Curses"* ]]; then
+		echo "SOLUTION FOUND!"
+		echo "Press Enter to write to $s"
+		read input
+		sed -i "6s/.*/$t/g;" $s
+		echo "Exiting"
+		break
+	fi
+        sleep 0.1
+        t=$(sed 's/./& /g' <<< $i)
         ((i=i+1))
         clear
 done
+
+
+#find way to pause script
