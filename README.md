@@ -6,5 +6,7 @@ USAGE INSTRUCTIONS:
 
     Make sure bomb file and solution file are in the same directory as the cracker
     
-    Run ./crack and watch for results, it will print the results on the screen so you can edit your solution file with the answer.
+    Run the specific ./crack file and watch for results, it will print the answer on the screen.
+    
+    Make sure to edit your solution file accordingly. 
 
