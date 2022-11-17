@@ -22,7 +22,7 @@ do
 		echo "Press Enter to confirm."
 		read input
 		echo -e
-		echo "Exiting"
+		echo "Exiting..."
 		break
 	fi
 	if [[ $tester == *"Curses"* ]]; then
@@ -33,7 +33,7 @@ do
 		echo "Press Enter to confirm."
 		read input
 		echo -e
-		echo "Exiting"
+		echo "Exiting..."
 		break
 	fi
         t=$(sed 's/./& /g' <<< $i)
@@ -47,5 +47,5 @@ if [[ $found_solution == 0 ]]; then
 	echo "Press Enter to confirm."
 	read input
 	echo -e
-	echo "Exiting"
+	echo "Exiting..."
 fi
