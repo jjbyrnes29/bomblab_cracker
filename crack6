@@ -6,10 +6,26 @@ input=""
 b=""
 s=""
 found_solution=0
-echo "Enter bomb file: "
-read b
-echo "Enter solution file name: "
-read s
+while true
+do
+	echo "Enter bomb file: "
+	read b
+	if [ -f "$b" ]; then
+		break
+	fi
+	echo "File not found."
+	echo -e
+done
+while true
+do
+	echo "Enter solution file name: "
+	read s
+	if [ -f "$s" ]; then
+		break
+	fi
+	echo "File Not Found."
+	echo -e
+done
 while [ $i -ne 654321 ]
 do
         echo "Solution Attempted: $t"
@@ -22,7 +38,7 @@ do
 		echo "Press Enter to confirm."
 		read input
 		echo -e
-		echo "Exiting..."
+		echo "Exiting"
 		break
 	fi
 	if [[ $tester == *"Curses"* ]]; then
@@ -33,7 +49,7 @@ do
 		echo "Press Enter to confirm."
 		read input
 		echo -e
-		echo "Exiting..."
+		echo "Exiting"
 		break
 	fi
         t=$(sed 's/./& /g' <<< $i)
@@ -47,5 +63,5 @@ if [[ $found_solution == 0 ]]; then
 	echo "Press Enter to confirm."
 	read input
 	echo -e
-	echo "Exiting..."
+	echo "Exiting"
 fi
