@@ -11,7 +11,6 @@ echo "Enter answer file"
 read s
 while [ $i -ne 654321 ]
 do
-       # sed -i "6s/.*/$t/g;" solution.txt
         echo "Solution Attempted: $t"
         tester=$(echo $t | ./$b $s | (grep  'Cong\|Curses'))
 	if [[ $tester == *"Cong"* ]]; then
@@ -35,6 +34,3 @@ do
         ((i=i+1))
         clear
 done
-
-
-#find way to pause script
