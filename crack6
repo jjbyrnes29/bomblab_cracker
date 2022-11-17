@@ -13,7 +13,15 @@ while [ $i -ne 654321 ]
 do
        # sed -i "6s/.*/$t/g;" solution.txt
         echo "Solution Attempted: $t"
-        tester=$(echo $t | ./$b $s | grep "Curses")
+        tester=$(echo $t | ./$b $s | (grep  'Cong\|Curses'))
+	if [[ $tester == *"Cong"* ]]; then
+		echo "SOLUTION FOUND!"
+		echo "Press Enter to write to $s"
+		read input
+		sed -i "6s/.*/$t/g;" $s
+		echo "Exiting"
+		break
+	fi
 	if [[ $tester == *"Curses"* ]]; then
 		echo "SOLUTION FOUND!"
 		echo "Press Enter to write to $s"
