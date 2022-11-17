@@ -1,13 +1,14 @@
 #!/bin/bash
 t=""
-i=11111
+i=526400
 tester=""
 input=""
 b=""
 s=""
-echo "Enter bomb file"
+found_solution=0
+echo "Enter bomb file: "
 read b
-echo "Enter answer file"
+echo "Enter solution file name: "
 read s
 while [ $i -ne 654321 ]
 do
@@ -15,22 +16,36 @@ do
         tester=$(echo $t | ./$b $s | (grep  'Cong\|Curses'))
 	if [[ $tester == *"Cong"* ]]; then
 		echo "SOLUTION FOUND!"
-		echo "Press Enter to write to $s"
+		found_solution=1
+		echo -e
+		echo "Make sure to save $t to $s"
+		echo "Press Enter to confirm."
 		read input
-		sed -i "6s/.*/$t/g;" $s
+		echo -e
 		echo "Exiting"
 		break
 	fi
 	if [[ $tester == *"Curses"* ]]; then
 		echo "SOLUTION FOUND!"
-		echo "Press Enter to write to $s"
+		found_solution=1
+		echo -e
+		echo "Make sure to save $t to $s"
+		echo "Press Enter to confirm."
 		read input
-		sed -i "6s/.*/$t/g;" $s
+		echo -e
 		echo "Exiting"
 		break
 	fi
-        sleep 0.1
         t=$(sed 's/./& /g' <<< $i)
         ((i=i+1))
         clear
 done
+if [[ $found_solution == 0 ]]; then
+	echo "Solution not found."
+	echo "Check to see if phase 5 is finished in solution file."
+	echo "Check to see if bomb file and solution file are in the same directory and typed correcty."
+	echo "Press Enter to confirm."
+	read input
+	echo -e
+	echo "Exiting"
+fi
