@@ -1,6 +1,6 @@
 #!/bin/bash
 t=""
-i=526400
+i=100000
 tester=""
 input=""
 b=""
